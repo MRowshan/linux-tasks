@@ -1,0 +1,15 @@
+#!/bin/bash
+
+declare -a num_array
+re='^[0-9]+$'
+
+read -p "Enter a number or enter any other value to exit: " num
+while [[ $num =~ $re ]] 
+do
+	num_array+=($num)
+	read -p "Enter a number: " num
+done
+
+echo "${num_array[*]}"
+
+	

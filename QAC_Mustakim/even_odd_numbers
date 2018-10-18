@@ -1,0 +1,25 @@
+#!/bin/bash
+
+read -p "Enter a number: " number
+if [[ $((number % 2)) -eq 0 ]]; then
+	even="$number is even";
+	echo $even
+	echo $even >> test3
+else
+	odd="$number is odd";
+	echo $odd;
+	echo $odd >> test3;
+fi
+
+
+read -p "Delete file? " answer
+if [[ ${answer} = "yes" ]]; then
+	rm -f test3
+	echo file deleted
+elif [[ $answer = "no" ]]; then
+	touch test3
+	mv test3 changedFileName
+else
+	echo input yes or no
+fi
+
