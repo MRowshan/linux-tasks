@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ps
+read -p "Enter a Process ID to stop it: " pid
+kill $pid
