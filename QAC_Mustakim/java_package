@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -p "would you like to install or delete java? " check
+
+if [[ $check = install ]]; then
+	sudo apt-get install -y default-jdk
+elif [[ $check = delete ]]; then
+	sudo apt-get remove -y default-jdk
+else
+	echo enter install or delete
+fi
