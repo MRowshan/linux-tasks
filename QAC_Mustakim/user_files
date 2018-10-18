@@ -1,0 +1,9 @@
+#!/bin/bash
+
+touch user_info
+cat /etc/passwd | awk -F ":" '{print $1,$3}'
+a=$(cat /etc/passwd | awk -F ":" '{print $1,$3}')
+echo $a >> user_info
+x=$(whoami)
+
+ls -l |rm -f $(grep -v $x)
